@@ -1,0 +1,29 @@
+/* Page: /produto/[id] - Product Layout Styles */
+
+.productContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .productContent {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+  }
+}
+
+.productImagesSection {
+  /* Primeira parte do grid */
+  min-width: 0;
+  overflow: hidden;
+}
+
+.productDetailsSection {
+  /* Segunda parte do grid */
+  min-width: 0;
+  overflow: hidden;
+}

@@ -1,0 +1,40 @@
+/* Global Container Styles */
+
+.globalContainer {
+  width: 100%;
+  max-width: 1186px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  overflow-x: hidden;
+  
+  /* Ajustes específicos para telas médias onde o problema ocorre */
+  @media (min-width: 1024px) and (max-width: 1217px) {
+    max-width: calc(100vw - 2rem);
+    padding: 0 2rem;
+  }
+  
+  /* Para telas maiores, remover o padding lateral */
+  @media (min-width: 1218px) {
+    padding: 0;
+  }
+}
+
+/* Estilo sticky para o main-header */
+.sticky {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Placeholder para compensar o header sticky */
+.stickyPlaceholder {
+  height: var(--header-height, 60px);
+  
+  @media (max-width: 767px) {
+    height: var(--header-height-mobile, 70px);
+  }
+}

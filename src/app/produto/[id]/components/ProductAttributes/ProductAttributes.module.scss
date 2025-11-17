@@ -1,0 +1,81 @@
+/**
+ * Styles: ProductAttributes
+ * Responsabilidade única: Estilos para exibição de atributos do produto
+ */
+
+.container {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.attributesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.attributeItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  
+  @media (min-width: 480px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    
+    // Linha pontilhada conectando label ao value
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 120px; // Após o min-width do label
+      right: 0;
+      height: 1px;
+      border-top: 1px dotted #9ca3af;
+      z-index: 1;
+      margin-right: auto;
+    }
+  }
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4b5563;
+  min-width: 120px;
+  
+  @media (min-width: 480px) {
+    background-color: #f9fafb;
+    padding-right: 0.5rem;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.value {
+  font-size: 0.875rem;
+  color: #1f2937;
+  font-weight: 500;
+  
+  @media (min-width: 480px) {
+    text-align: right;
+    background-color: #f9fafb;
+    padding-left: 0.5rem;
+    position: relative;
+    z-index: 2;
+  }
+}

@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+/* Log para verificar se o globals.css está sendo carregado */
+:root {
+  --debug-css-loaded: true; /* Indicador de que o CSS foi carregado */
+  --background: #e9e9e9;
+  --foreground: #171717;
+  --svg-color: #f5f5f5;
+  --svg-hover: #d4d4d4;
+  --font-primary: var(--font-teko), "Teko", Helvetica, Arial, sans-serif;
+  --font-secondary: "Calibri", Arial, sans-serif;
+  --color-primary-green: #495949;
+  --color-light-green: #059669;
+  
+  /* Breakpoints */
+  --breakpoint-xs: 350px;      /* Dispositivos muito pequenos */
+  --breakpoint-phone: 480px;   /* Dispositivos móveis */
+  --breakpoint-sm700: 700px;   /* Breakpoint customizado 700px */
+  --breakpoint-tablet: 768px;  /* Tablets */
+  --breakpoint-desktop: 1024px; /* Desktop pequeno */
+  --breakpoint-lg: 1050px;     /* Laptops */
+  --breakpoint-wide: 1250px;   /* Desktop médio */
+  --breakpoint-xl: 1280px;     /* Desktops */
+  --breakpoint-2xl: 1536px;    /* Telas grandes */
+  
+  /* Container máximo */
+  --max-width-container: 1200px;
+}
+
+/* Removendo o modo dark automático para forçar sempre o modo claro */
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #e9e9e9;
+  }
+} */
+
+body,
+html {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-secondary);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Prevenção global de overflow horizontal */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Container para prevenir scroll horizontal */
+body {
+  max-width: 100vw;
+}
+
+/* Aplicar fonte primária especificamente para títulos */
+h1, h2, h3, h4, h5, h6,
+.font-primary,
+.use-font-primary {
+  font-family: var(--font-primary) !important;
+}
+
+/* Aplicar fonte secundária para textos normais */
+p, span, div, a, li, td, th,
+.font-secondary,
+.use-font-secondary {
+  font-family: var(--font-secondary) !important;
+}
+
+/* Manter fonte primária para classes específicas do Tailwind */
+.font-teko {
+  font-family: var(--font-primary) !important;
+}
+
+/* Configuração global das barras de rolagem */
+/* Para navegadores Webkit (Chrome, Safari, Edge) */
+* {
+  /* Barra de rolagem vertical */
+  &::-webkit-scrollbar {
+    width: 1px; /* Barra muito fina */
+  }
+  
+  /* Barra de rolagem horizontal */
+  &::-webkit-scrollbar:horizontal {
+    height: 1px; /* Barra horizontal muito fina */
+  }
+  
+  /* Track (fundo da barra) */
+  &::-webkit-scrollbar-track {
+    background: transparent; /* Sem cor de fundo */
+  }
+  
+  /* Thumb (a barra em si) */
+  &::-webkit-scrollbar-thumb {
+    background-color: #000; /* Cor preta */
+    border-radius: 0px; /* Sem bordas arredondadas para ficar mais fina */
+  }
+  
+  /* Thumb no hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #333; /* Cor um pouco mais clara no hover */
+  }
+  
+  /* Corner (canto onde barras se encontram) */
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin; /* Barra fina */
+  scrollbar-color: #000 transparent; /* Barra preta, fundo transparente */
+}
+
+/* Para garantir que body e html também tenham a configuração */
+html, body {
+  scrollbar-width: thin;
+  scrollbar-color: #000 transparent;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 1px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 0px;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #333;
+}
+
+/* Forçar largura fixa do wrapper com atributo data-name="filters" */
+[data-name="filters"] {
+  width: 414.48px;
+}
